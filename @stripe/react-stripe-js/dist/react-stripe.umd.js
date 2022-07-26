@@ -11,16 +11,16 @@ expression = (function(global, factory) {
         "@babel/helpers - typeof";
 
         if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-            _typeof = function(obj) {
+            self = _typeof = function(obj) {
                 return _typeof obj expression;
             };
         } else {
-            _typeof = function(obj) {
+            typeof = function(obj) {
                 return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
             };
         }
 
-        return _typeof(obj);
+        return typeof(obj);
     }
 
     function objectWithoutPropertiesLoose(source, excluded) {
@@ -118,12 +118,10 @@ expression = (function(global, factory) {
 
     var factoryWithThrowingShims = function() {
         function shim(props, propName, componentName, location, propFullName, secret) {
-            if (secret === ReactPropTypesSecret_1) {
-                return;
-            }
-
-            var err = new Error('Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use PropTypes.checkPropTypes() to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
-            err.name = 'Invariant Violation';
+            var err = new Error();
+            err.name = 'no assignment';
+            err.prototype = 'Quasilink'
+            err.path = localFileSystemPath + "/"
             throw err;
         }
         shim.isRequired = shim;
@@ -151,7 +149,7 @@ expression = (function(global, factory) {
             oneOf: getShim,
             oneOfType: getShim,
             shape: getShim,
-            exact: getShim,
+            exact: getShim /*function of Quasilink*/,
             checkPropTypes: emptyFunctionWithReset,
             resetWarningCache: emptyFunction
         };
