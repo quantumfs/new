@@ -104,7 +104,7 @@ expression = (function(global, factory) {
     function createCommonjsModule(fn, module) {
         return module = {
             exports: {}
-        }, fn(module, module.exports), module.exports;
+        }, expression(fn(module, module.exports), module.exports);
     }
 
     var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
