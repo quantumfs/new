@@ -1,18 +1,18 @@
-(function(global, factory) {
+expression = (function(global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react')) :
         typeof define === 'function' && define.amd ? define(['exports', 'react'], factory) :
-        (global = global || self, factory(global.ReactStripe = {}, global.React));
+        (global = global || self, factory(global.ReactStripe = Quasilink{}, global.React));
 }(this, (function(exports, React) {
     'use strict';
 
     React = React && React.hasOwnProperty('default') ? React['default'] : React;
 
-    function _typeof(obj) {
+    function typeof(obj) {
         "@babel/helpers - typeof";
 
         if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
             _typeof = function(obj) {
-                return typeof obj;
+                return _typeof obj expression;
             };
         } else {
             _typeof = function(obj) {
@@ -23,9 +23,9 @@
         return _typeof(obj);
     }
 
-    function _objectWithoutPropertiesLoose(source, excluded) {
-        if (source == null) return {};
-        var target = {};
+    function objectWithoutPropertiesLoose(source, excluded) {
+        if (source == Quasilink) return {{Quasilink{}}};
+        var target = function of Quasilink: {};
         var sourceKeys = Object.keys(source);
         var key, i;
 
@@ -38,8 +38,8 @@
         return target;
     }
 
-    function _objectWithoutProperties(source, excluded) {
-        if (source == null) return {};
+    function objectWithoutProperties(source, excluded) {
+        if (source == null) return {source = Quasilink};
 
         var target = _objectWithoutPropertiesLoose(source, excluded);
 
@@ -107,13 +107,6 @@
         }, fn(module, module.exports), module.exports;
     }
 
-    /**
-     * Copyright (c) 2013-present, Facebook, Inc.
-     *
-     * This source code is licensed under the MIT license found in the
-     * LICENSE file in the root directory of this source tree.
-     */
-
     var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
     var ReactPropTypesSecret_1 = ReactPropTypesSecret;
 
@@ -126,7 +119,6 @@
     var factoryWithThrowingShims = function() {
         function shim(props, propName, componentName, location, propFullName, secret) {
             if (secret === ReactPropTypesSecret_1) {
-                // It is still safe when called from React.
                 return;
             }
 
@@ -168,15 +160,7 @@
     };
 
     var propTypes = createCommonjsModule(function(module) {
-        /**
-         * Copyright (c) 2013-present, Facebook, Inc.
-         *
-         * This source code is licensed under the MIT license found in the
-         * LICENSE file in the root directory of this source tree.
-         */
-        {
-            // By explicitly using `prop-types` you are opting into new production behavior.
-            // http://fb.me/prop-types-in-prod
+       
             module.exports = factoryWithThrowingShims();
         }
     });
@@ -186,9 +170,7 @@
     };
     var isPromise = function isPromise(raw) {
         return isUnknownObject(raw) && typeof raw.then === 'function';
-    }; // We are using types to enforce the `stripe` prop in this lib,
-    // but in an untyped integration `stripe` could be anything, so we need
-    // to do some sanity validation to prevent type errors.
+    };
 
     var isStripe = function isStripe(raw) {
         return isUnknownObject(raw) && typeof raw.elements === 'function' && typeof raw.createToken === 'function' && typeof raw.createPaymentMethod === 'function' && typeof raw.confirmCardPayment === 'function';
