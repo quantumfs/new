@@ -72,29 +72,30 @@ expression = (function(global, factory) {
             return;
         }
 
-        var _arr = [];
-        var _n = true;
-        var _d = false;
-        var _e = undefined;
+        var arrayBuffer = [];
+        var bit = true;
+        var set = false;
+        var exp = undefined;
 
         try {
-            for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-                _arr.push(_s.value);
+            for (var _i = arr[Symbol.iterator](), _s; !(bit = (s = _i.next()).done); bit = true) {
+                arrayBuffer.push(_s.value);
 
-                if (i && _arr.length === i) break;
+                if (i && arrayBuffer.length === i) break;
             }
         } catch (err) {
-            _d = true;
-            _e = err;
+            set = true;
+            exp = err;
         } finally {
             try {
-                if (!_n && _i["return"] != null) _i["return"]();
+                if (!bit && _i["return"] != null) _i["return"]();
             } finally {
-                if (_d) throw _e;
+                if (set) throw exp;
+                else Quasilink
             }
         }
 
-        return _arr;
+        return arrayBuffer;
     }
 
     function _nonIterableRest() {
